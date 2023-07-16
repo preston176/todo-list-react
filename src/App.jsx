@@ -14,7 +14,7 @@ export default function App() {
       </div>
       <button className='btn'>Add</button>
     </form>
-    
+    <h1 className='header'>Todo List</h1>
     </>
   )
 }
