@@ -15,6 +15,15 @@ export default function App() {
       <button className='btn'>Add</button>
     </form>
     <h1 className='header'>Todo List</h1>
+    <ul className='list'>
+      <li>
+        <label htmlFor="">
+          <input type="checkbox" />
+          Item 1
+        </label>
+        <button className='btn btn-danger'>Delete</button>
+      </li>
+    </ul>
     </>
   )
 }
