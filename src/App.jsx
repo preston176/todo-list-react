@@ -1,12 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import { Button }  from '@mui/material';
 import NewTodoForm from './components/NewTodoForm';
 import TodoList from './components/TodoList';
 
 export default function App() {
   
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+/* The code `const localValue = localStorage.getItem('ITEMS')` is retrieving the value stored in the
+browser's `localStorage` with the key `'ITEMS'`. */
+    const localValue = localStorage.getItem('ITEMS')
+    if (localValue == null) return []
+
+    
+    return JSON.parse(localValue)
+  });
+/* The `useEffect` hook is used to perform side effects in a functional component. In this case, the
+`useEffect` hook is used to store the `todos` state in the browser's `localStorage` whenever the
+`todos` state changes. */
+  useEffect(() => {
+    localStorage.setItem('ITEMS', JSON.stringify(todos))
+  }, [todos])
 
   function addTodo(title) {
     setTodos(currentTodos => {
