@@ -7,11 +7,13 @@ export default function App() {
   return (
     <>
       
-      <div className= 'justify-center m-auto bg-slate-300 text-center'>
-      <h2>Todo List</h2>
-
-
+    <form className='new-item-form'>
+      <div className='form-row'>
+        <label htmlFor='item'>New Item</label>
+        <input type="text" id='item' />
       </div>
+
+    </form>
     </>
   )
 }
