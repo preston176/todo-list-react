@@ -47,8 +47,9 @@ function deleteTodo (id) {
   return (
     <>
     <div className='wrapper bg-slate-600 h-auto w-3/4 rounded-lg m-auto max-h-fit'>
+    {/* <h2 className='text-neutral-100 font-light text-3xl'>Todo List App</h2> */}
       <NewTodoForm onSubmit={addTodo}/>
-    <h1 className='header text-neutral-100 font-light text-3xl'>Todo List</h1>
+    <h1 className='header text-neutral-100 font-light text-2xl'>Todo List</h1>
     <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
     
     </div>
