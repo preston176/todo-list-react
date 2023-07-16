@@ -4,13 +4,20 @@ import { Button }  from '@mui/material';
 
 export default function App() {
   const [newItem, setNewItem] = useState("");
+  const [todos, setTodos] = useState([]);
+  
   function handleSubmit(e) {
     e.preventDefault();
+    setTodos(currentTodos => {
+      return [...currentTodos, {id: crypto.randomUUID(), title: newItem, completed: false}]
+    })
+
+    setNewItem("");
   }
 
 
   return (
-    <div className='wrapper bg-slate-600 h-96 w-auto rounded-lg m-auto '>
+    <div className='wrapper bg-slate-600 h-auto w-3/4 rounded-lg m-auto max-h-fit'>
       
     <form onSubmit={handleSubmit} className=' new-item-form py-3.5 flex-col flex px-2.5'>
       <div className='form-row flex flex-col'>
@@ -21,21 +28,18 @@ export default function App() {
     </form>
     <h1 className='header text-neutral-100 font-light text-3xl'>Todo List</h1>
     <ul className='list text-white m-3.5 p-3.5'>
-      <li className='my-1'>
+    {todos.map(todo => { 
+      return (
+      
+        <li className='my-1' key={todo.id}>
         <label htmlFor="" >
-          <input type="checkbox"  />
-          Item 1
+          <input type="checkbox" className='mx-3.5' checked={todo.completed}  />
+          {todo.title}
         </label>
         <Button variant="outlined" color="error" size='medium'>Delete</Button>
         {/* <button className='btn btn-danger '>Delete</button> */}
-      </li>
-      <li>
-        <label htmlFor="">
-          <input type="checkbox" />
-          Item 2
-        </label>
-        <button className='btn btn-danger mx-3.5'>Delete</button>
-      </li>
+      </li>)
+    })}
     </ul>
     </div>
   )
