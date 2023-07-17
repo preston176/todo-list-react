@@ -4,7 +4,7 @@ export default function TodoItem({completed, id, title, toggleTodo, deleteTodo})
     return (
         <li className='my-1'>
         <label htmlFor="" >
-          <input type="checkbox" className='mx-3.5' checked={completed} 
+          <input type="checkbox" className='mx-3 scale-150 ' checked={completed} 
           onChange={e => toggleTodo(id, e.target.checked)}
 
           />

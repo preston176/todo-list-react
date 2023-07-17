@@ -10,7 +10,7 @@ export default function NewTodoForm({ onSubmit }) {
         setNewItem("");
       }
     return (
-        <form onSubmit={handleSubmit} className=' new-item-form py-3.5 flex-col flex px-2.5'>
+        <form onSubmit={handleSubmit} className=' new-item-form py-3.5 flex-col flex px-1 justify-center text-center min-h-max'>
       <div className='form-row flex flex-col'>
         <label className='text-neutral-100 text-center text-3xl font-normal h-10  ' htmlFor='item'>New Item</label>
         <input type="text" value={newItem} onChange={e => {setNewItem(e.target.value)}} id='item' className='rounded-md outline-none border-none hover:outline-none hover:border-none active:border-none active:outline-none h-7 bg-emerald-700 text-white font-bold text-center'/>
