@@ -1,5 +1,7 @@
 
 import './App.css'
+import {AiOutlinePlus} from 'react-icons/ai'
+
 
 function App() {
 
@@ -9,7 +11,19 @@ function App() {
 
   return (
     <div className={style.bg}>
-    
+      <div className={style.container}>
+      <h3 className={style.heading}>Todo App</h3>
+      <form className={style.form}>
+          <input className={style.input} type="text" placeholder='Add Todo' />
+          <button className={style.button}>
+            <AiOutlinePlus size={30}/>
+          </button>
+      </form>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+      </div>
     </div>
   )
 }
